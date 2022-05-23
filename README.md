@@ -13,6 +13,9 @@ mongo:27017 is address of mongo in docker
 **Start nodejs application docker container**
  docker run -d --name node-app --link mongo:mongo -p 3311:3311 vue-chess
 
+**Serve Static Files in NodeJS using NGINX in server/public dir**
+docker run -d --name web -p 8080:80 -v $(pwd)/.:/var/www -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf --link node-app:node-app nginx
+
 
 #### Minikube
 
@@ -25,6 +28,7 @@ if profile not found - run minikube start
 > $ kubectl get pods -A  
 or   
 > $ kubectl get pods  
+
 **Cluster creation**  
 > $ kubectl apply -f kube  
 >  kubectl get pods  
@@ -32,6 +36,7 @@ or
 **Get vue-chess service address**  
 > $ minikube service vue-chess --https --url  
 > $ curl -k https://192.168.49.2:31516  
+
 **ssh tunnel to access to vue-chess service from outside the vm**  
 > $ service_name=vue-chess  
 > $ service_port=$(minikube service $service_name --https --url | cut -d':' -f3)  
