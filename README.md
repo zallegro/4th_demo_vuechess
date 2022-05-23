@@ -14,7 +14,7 @@ mongo:27017 is address of mongo in docker
  > $ docker run -d --name node-app --link mongo:mongo -p 3311:3311 vue-chess
 
 **Serve Static Files in NodeJS using NGINX in server/public dir**   
-> $ docker run -d --name web -p 8080:80 -v $(pwd)/.:/var/www -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf --link node-app:node-app nginx
+ > $ docker run -d --name web -p 8080:80 -v $(pwd)/.:/var/www -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf --link node-app:node-app nginx
 
 
 #### Minikube
