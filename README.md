@@ -16,24 +16,24 @@ mongo:27017 is address of mongo in docker
 
 #### Minikube
 
-**Commands**
-> $ minikube status
-if profile not found - run minikube start
-> $ kubectl cluster-info
-> $ kubectl get nodes
-> $ kubectl version --short
-> $ kubectl get pods -A
-or 
-> $ kubectl get pods
-**Cluster creation**
-> $ kubectl apply -f kube
->  kubectl get pods
->  kubectl get svc
-**Get vue-chess service address**
-> $ minikube service vue-chess --https --url
-> $ curl -k https://192.168.49.2:31516
-**ssh tunnel to access to vue-chess service from outside the vm**
-> $ service_name=vue-chess
-> $ service_port=$(minikube service $service_name --https --url | cut -d':' -f3)
-> $ ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -NL \*:${service_port}:0.0.0.0:${service_port}
+**Commands**  
+> $ minikube status  
+if profile not found - run minikube start  
+> $ kubectl cluster-info  
+> $ kubectl get nodes  
+> $ kubectl version --short  
+> $ kubectl get pods -A  
+or   
+> $ kubectl get pods  
+**Cluster creation**  
+> $ kubectl apply -f kube  
+>  kubectl get pods  
+>  kubectl get svc  
+**Get vue-chess service address**  
+> $ minikube service vue-chess --https --url  
+> $ curl -k https://192.168.49.2:31516  
+**ssh tunnel to access to vue-chess service from outside the vm**  
+> $ service_name=vue-chess  
+> $ service_port=$(minikube service $service_name --https --url | cut -d':' -f3)  
+> $ ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -NL \*:${service_port}:0.0.0.0:${service_port}  
 
