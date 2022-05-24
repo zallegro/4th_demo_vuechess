@@ -41,4 +41,4 @@ or
 > $ service_name=vue-chess  
 > $ service_port=$(minikube service $service_name --https --url | cut -d':' -f3)  
 > $ ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -NL \*:${service_port}:0.0.0.0:${service_port}  
-
+ 
