@@ -1,6 +1,10 @@
 ### vuejs express webpack mongodb socket-io chess-game
 
-Prerequirements:  "mongoose": "^4.9.0" node 10 mongodb 4.0
+Prerequirements:  
+Server "mongoose": "^4.9.0" node 10 mongodb 4.0
+Static  in build/webpack.base.conf.js
+ add alias 'Vue': path.join(__dirname, '../node_modules/vue'),
+
 
 #### Mongo
 **Start up mongo initially**
