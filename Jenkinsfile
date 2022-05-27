@@ -11,7 +11,7 @@ node {
       dir('vue-chess') {
 
         /* Build the docker image */
-        app = docker.build("bolbeck/dow2020simplelife")
+        app = docker.build("zallegro/vue-chess-img")
       }
     }
 
