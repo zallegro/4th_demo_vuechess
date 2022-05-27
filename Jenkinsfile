@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
       dir('vue-chess') {
-        sh "ls"
+        sh "echo ls"
         /* Build the docker image */
         /*app = docker.build("zallegro/vue-chess-img")*/
       }
