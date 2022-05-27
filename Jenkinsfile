@@ -13,7 +13,7 @@ node {
         /* Build the docker image */
         sh "pwd"
         sh "ls -la ${pwd()}"
-        app = docker.build("zallegro/vue-chess-img", "./vue-chess")
+        app = docker.build("zallegro/vue-chess-img")
       }
     }
 
