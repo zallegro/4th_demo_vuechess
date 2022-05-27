@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+dist/
+.idea/
+npm-debug.log
+selenium-debug.log
+test/unit/coverage
+test/e2e/reports
+JenkinsWithK8s/minikConfig/
+JenkinsWithK8s/kubeconfig/
+JenkinsWithDockerCompose/
+JenkinsWithK8s/minikConfigOld/
+JenkinsWithK8s/kubeconfigold/
+JenkinsWithK8s/minikConfigOld2/
+JenkinsWithK8s/kubeconfigold2/
