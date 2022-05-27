@@ -11,6 +11,7 @@ node {
       dir('vue-chess') {
        
         /* Build the docker image */
+        sh "pwd"
         app = docker.build("zallegro/vue-chess-img")
       }
     }
