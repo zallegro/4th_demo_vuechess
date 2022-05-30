@@ -6,7 +6,7 @@ Static  in build/webpack.base.conf.js
  add alias 'Vue': path.join(__dirname, '../node_modules/vue'),  
 
 
-''''docker run -u root --rm -d -p 8080:8080 -p 50000:50000 --name jenkcont -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --network minikube jenk''''
+```docker run -u root --rm -d -p 8080:8080 -p 50000:50000 --name jenkcont -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --network minikube jenk```
 
 
 #### Mongo
