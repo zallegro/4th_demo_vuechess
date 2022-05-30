@@ -11,3 +11,6 @@ RUN chmod u+x kubectl && mv kubectl /bin/kubectl
 COPY ./kubeconfig /root/.kube
 #Copy autorization certificates from $HOME/.minikube
 COPY ./minikConfig  /root/.minikube
+
+# Command to run container 
+# docker run -u root --rm -d -p 8080:8080 -p 50000:50000 --name jenkcont -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --network minikube jenk
