@@ -20,8 +20,10 @@ WORKDIR /usr/src/app
 COPY ./server/package*.json ./
 RUN npm install --only=production
 COPY . .
-COPY --from=builder /usr/src/app/dist ./dist
 
+# Using static files that was build in a stage 1
+COPY --from=builder /usr/src/app/dist ./dist
+#Copy static files to static directory
 RUN rm -rf server/public/static && cp dist/static -r server/public/static && rm server/views/client.html && cp dist/index.html server/views/client.html
 
 EXPOSE 3311
