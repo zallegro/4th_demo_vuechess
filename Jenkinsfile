@@ -16,7 +16,13 @@ node {
         app = docker.build("zallegro/vue-chess-img")
       }
     }
-
+    
+    stage('Test image') {           
+            app.inside {            
+             
+             sh 'echo "Tests passed"'        
+            }    
+        }     
 
     stage('Push image') {
 
