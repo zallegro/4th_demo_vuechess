@@ -22,8 +22,8 @@ jobs:
           node-version: '14.x'
 
       - name: npm install, build, and test
-        run: cd vue-chess/server
         run: |
+          cd vue-chess/server
           npm install
           npm run build --if-present
           npm run test --if-present
