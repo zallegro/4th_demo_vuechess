@@ -23,9 +23,9 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd vue-chess/server
+          cd vue-chess
           npm install
-         # npm run build --if-present
+          npm run build --if-present
          # npm run test --if-present
 
       - name: Upload artifact for deployment job
