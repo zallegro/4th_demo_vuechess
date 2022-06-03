@@ -25,30 +25,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-
-      - uses: bahmutov/npm-install@v1
-        env:
-            NODE_ENV: production
-        with:
-          useLockFile: false
-          working-directory: .
-      - uses: bahmutov/npm-install@v1
-        with:
-          useLockFile: false
-          working-directory: server
-
-      - name: Run build
-        run: npm ci
-        working-directory: app1
-      - name: Run app
-        run: node .
-        working-directory: server
+      - name: npm install, build, and test
+        run: |
+           # Build and test the project, then
+           # deploy to Azure Web App.
+           cd vue-chess/server
+           npm install
+           #npm run build --if-present
+           #npm run test --if-present
+      
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ./vue-chess/server
 
   deploy:
     runs-on: ubuntu-latest
@@ -70,4 +61,4 @@ jobs:
           app-name: 'vue-chess'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C647F6EE39364678892B8CD030E8ED2B }}
-          package: .
+          package: ./vue-chess/server
