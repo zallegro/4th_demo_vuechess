@@ -30,9 +30,11 @@ jobs:
         env:
             NODE_ENV: production
         with:
+          useLockFile: false
           working-directory: .
       - uses: bahmutov/npm-install@v1
         with:
+          useLockFile: false
           working-directory: server
 
       - name: Run build
