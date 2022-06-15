@@ -9,9 +9,9 @@ var config = {
         },
         uri: process.env.MONGO_URL || 'mongodb://mongo:27017/vuegustchess'
     },
-    porthttp: process.env.WEBSITES_PORT || 8080,
+    porthttp: process.env.WEBSITES_PORT || 3311,
     multicore: false,
-    https: false,
+    https: true,
     debug: false
 }
 module.exports = config;
