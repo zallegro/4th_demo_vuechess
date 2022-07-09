@@ -4,7 +4,7 @@
             <md-dropdown-item v-for="len in lenguajes" closing @click="changeLenguaje(len.value)">{{ len.label }}
             </md-dropdown-item>
         </md-dropdown-list>
-        <md-navbar title="VueChess" hamburger mode="hide-on-med-and-down" left nav-class="blue darken-4">
+        <md-navbar title="VueChessDemo4" hamburger mode="hide-on-med-and-down" left nav-class="blue darken-4">
             <md-nav-item v-link="{name: 'home',activeClass: 'active'}">{{ $t("home.title") }}</md-nav-item>
             <!--
             <md-nav-item v-link="{name: 'multiplayer',activeClass: 'active'}">Multijugador</md-nav-item>
